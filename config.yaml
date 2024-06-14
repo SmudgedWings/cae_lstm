@@ -1,0 +1,38 @@
+1D_cae_data:
+  data_path: "./dataset/sod.npy"    # ./dataset/sod.npy 
+  batch_size: 10    
+  time_size: 531      # The numbers of the snapshots, 531 for sod
+  multiple: 1      # 1
+1D_cae_optimizer:
+  lr: 0.001
+  weight_decay: 0.000001
+  epochs: 4400
+  save_ckpt_interval: 400
+  summary_dir: "./summary2"      # The directory where the training process files are saved
+1D_cae_model:
+  data_dimension: [256, 128, 64, 32, 16, 8]    # change free parater
+  conv_kernel_size: 3
+  maxpool_kernel_size: 2
+  maxpool_stride: 2
+  encoder_channels: [1, 40, 30, 20, 10, 5, 1]
+  decoder_channels: [1, 1, 5, 10, 20, 30, 40, 1]
+1D_lstm_data:
+  batch_size: 4    # 4 for sod
+  time_size: 531    # 531 for sod
+  latent_size: 4   # 4 for sod
+  time_window: 70    # 70 for sod
+  gaussian_filter_sigma: 3
+1D_lstm_optimizer:
+  lr: 0.001
+  weight_decay: 0.000001
+  epochs: 4400
+  save_ckpt_interval: 400
+  summary_dir: "./summary2"
+1D_lstm_model:
+  latent_size: 4      # The input size of LSTM, 4 for sod
+  hidden_size: 200
+  num_layers: 2      # 2 for sod
+1D_prediction:
+  cae_ckpt_path: "./summary2/ckpt/cae_4400.ckpt"
+  lstm_ckpt_path: "./summary2/ckpt/lstm_4400.ckpt"
+  prediction_result_dir: "./prediction2_result"

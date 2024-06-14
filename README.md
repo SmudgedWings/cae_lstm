@@ -50,13 +50,13 @@ python cae_eval.py
 
 #### 验证CAE重建性能
 
-**setting：**自由变量：2，4，8，学习率：0.001，batchsize：10，epoch：4400，训练数据为前70个时间步的数据
+setting：自由变量：2，4，8，学习率：0.001，batchsize：10，epoch：4400，训练数据为前70个时间步的数据
 
 #### 验证CAE-LSTM预测性能
 
 使用CAE重建性能实验中训练出的三个模型继续训练LSTM模型。
 
-**setting：**LSTM设置两层，神经元数量：200，移动窗口：70
+setting：LSTM设置两层，神经元数量：200，移动窗口：70
 
 
 
